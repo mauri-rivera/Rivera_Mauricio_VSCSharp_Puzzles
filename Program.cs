@@ -89,7 +89,8 @@ static void Nombres()
     
     List<string> ordenListaNombres = new List<string>();
     Random numeroAleatorio = new Random();
-    int j, conteo = 0;
+    int j;
+    bool conteo = false;
 
     foreach (string nombre in listaNombres)
     {
@@ -120,18 +121,18 @@ static void Nombres()
             {
                 if (ordenListaNombres[i] != listaNombres[j])
                 {
-                    if (conteo == 0 && i == (ordenListaNombres.Count - 1))
+                    if (conteo == false && i == (ordenListaNombres.Count - 1))
                     {
                         ordenListaNombres.Add(listaNombres[j]);
                     }
                 }
                 else
                 {
-                    conteo++;
+                    conteo = true;
                 }
             }
 
-            conteo = 0;
+            conteo = false;
         }
         else 
         {
